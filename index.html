@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>ChemAPI</title>
+  <!-- Meta -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+  <!-- FontAwesome JS -->
+  <script defer="" src="https://use.fontawesome.com/releases/v5.1.1/js/all.js" integrity="sha384-BtvRZcyfv4r0x/phJt9Y9HhnN5ur1Z+kZbKVgzVBAlQZX4jvAuImlIz+bG7TS00a" crossorigin="anonymous"></script>
+  <!-- Global CSS -->
+  <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+  <!-- Plugins CSS -->
+  <link rel="stylesheet" href="assets/plugins/prism/prism.css">
+  <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">
+  <!-- Theme CSS -->
+  <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body class="body-green">
+  <div class="page-wrapper">
+    <!-- ******Header****** -->
+    <header id="header" class="header">
+      <div class="container">
+        <div class="branding">
+          <h1 class="logo">
+            <span aria-hidden="true" class="fa fa-flask"></span>
+            <span class="text-highlight">Chem</span><span class="text-bold">API</span>
+          </h1>
+        </div>
+        <!--//branding-->
+      </div>
+      <!--//container-->
+    </header>
+    <!--//header-->
+    <div class="doc-wrapper">
+      <div class="container">
+        <div id="doc-header" class="doc-header text-center">
+          <h1 class="doc-title"><i class="fa fa-flask" aria-hidden="true"></i><b>Chem</b>API</h1>
+          <div class="meta"><i class="far fa-clock"></i> Last updated: February 11th, 2019</div>
+        </div>
+        <!--//doc-header-->
+        <div class="doc-body row">
+          <div class="doc-content col-md-9 col-12 order-1">
+            <div class="content-inner">
+              <section id="whatdoesitdo-section" class="doc-section">
+                <h2 class="section-title">What does ChemAPI do?</h2>
+                <div class="section-block">
+                  <p>ChemAPI is a free API that allows developers to search for the:<br>
+                  </p>
+                  <ul>
+                    <li>boiling point and melting point</li>
+                    <li>density</li>
+                    <li>molecular weight/formula</li>
+                    <li>and more</li>
+                  </ul>
+                  <p>of tens of thousands of common laboratory chemicals.<br><br>
+				  We built this API to give back to the scientific community, because PhDs are awesome.<br>
+				  This project is funded out of our paychecks, so if you like what we're doing, please consider donating :).</p>
+                </div>
+              </section>
+              <!--//doc-section-->
+              <section id="uses-section" class="doc-section">
+                <h2 class="section-title">What can I use ChemAPI for?</h2>
+                <div id="step1" class="section-block">
+                  <h3 class="block-title">Example Uses:</h3>
+                  <ul class="list">
+                    <li>Source of chemical data for electronic lab notebooks.</li>
+                    <li>Automatically gather chemical data for chemical inventories.</li>
+                    <li>Investigate relationships between chemical properties and molecular structure using ChemAPI as a data source </li>
+                    <li>Program chemical knowledge into voice assistants like Google Assistant, Alexa, or Mycroft.</li>
+                    <li>Basically, add chemical property data to whatever your heart desires.</li>
+                  </ul>
+                </div>
+                <!--//section-block-->
+                <section id="pricing-section" class="doc-section">
+                  <h2 class="section-title">Does ChemAPI cost money?</h2>
+                  <div id="step1" class="section-block">
+                    <h3 class="block-title">ChemAPI is <u>free to use!</u></h3>
+                    <p>Our philosphy is that scientific data needs to be as easily accessible as possible, so ChemAPI is and always will be free for the scientific community for eternity/until the end of the universe.</p>
+                    <!--//code-block-->
+                  </div>
+                </section>
+                <!--//section-block-->
+                <!--//section-block-->
+              </section>
+              <!--//doc-section-->
+              <section id="code-section" class="doc-section">
+                <h2 class="section-title">Docs</h2>
+                <div class="section-block">
+                  <p>The /lookup endpoint returns the chemical properties, in the json format, of a chemical that you input. <br><br>You can either input the chemical as a CAS number or a chemical name.<br><br>We can even handle misspellings, chemical "vernacular" (for example <a href="https://54v06pqby9.execute-api.us-east-1.amazonaws.com/dev/lookup?q=baking%20soda">baking soda</a>), and some trade names!<br></p>
+                </div>
+                <!--//section-block-->
+                <div id="howto" class="section-block">
+                  <h3>There are many ways to query for a chemical:</h3>
+                  <div class="code-block">
+                    <h4>https://54v06pqby9.execute-api.us-east-1.amazonaws.com/dev...</h4>
+                    <h6><a href="https://54v06pqby9.execute-api.us-east-1.amazonaws.com/dev/lookup?q=caffeine">/lookup?q=caffeine</a> <i>(correct spelling)</i><br>
+					<a href="https://54v06pqby9.execute-api.us-east-1.amazonaws.com/dev/lookup?q=cafiene">/lookup?q=cafiene</a>  <i>(misspelling)</i><br>
+					<a href="https://54v06pqby9.execute-api.us-east-1.amazonaws.com/dev/lookup?q=No%20Doz">/lookup?q=No Doz</a>  <i>(brand name)</i><br>
+					<a href="https://54v06pqby9.execute-api.us-east-1.amazonaws.com/dev/lookup?q=58-08-2">/lookup?q=58-08-2</a>  <i>(CAS number)</i><br>
+					<a href="https://54v06pqby9.execute-api.us-east-1.amazonaws.com/dev/lookup?q=C8H10N4O2">/lookup?q=C8H10N4O2</a>  <i>(molecular formula)</i><br>
+					<a href="https://54v06pqby9.execute-api.us-east-1.amazonaws.com/dev/lookup?q=1,3,7-Trimethylpurine-2,6-dione">/lookup?q=1,3,7-Trimethylpurine-2,6-dione</a>  <i>(IUPAC)</i>
+                    </h6>
+                    <p>Returns all available chemical properties for caffeine in the json format (see below).<br><br>There are many ways to search for a single compound. Also, as an added convenience for developers and their end users, our API is able to effectively handle typos!</p>
+                    <pre><code class="language-json">{  
+   "CAS":"58-08-2",
+   "boiling_point_C":178.0,
+   "density_gcm-1":1.23,
+   "melting_point_C":236.5,
+   "mw":194.19,
+   "hazards":[  
+      "Harmful",
+      "Highly Flammable",
+      "Toxic"
+   ],
+   "prod_name":"Caffeine",
+   "mol_formula":"C8H10N4O2",
+   "physical_description":"white to light yellow crystal powder",
+   "color":"Silky white or white"
+}
+</code></pre>
+                  </div>
+                  <!--//code-block-->
+                </div>
+                <div id="resptime" class="section-block">
+                  <h3>Queries are returned quickest when done with CAS numbers.</h3>
+                  <div class="code-block">
+                    <h5>https://54v06pqby9.execute-api.us-east-1.amazonaws.com/dev...</h5>
+                    <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th></th>
+                            <th>Query At Endpoint</th>
+                            <th>Response Time</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td><a href="https://54v06pqby9.execute-api.us-east-1.amazonaws.com/dev/lookup?q=6381-59-5">/lookup?q=6381-59-5</a></td>
+                            <td>50 ms</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td><a href="https://54v06pqby9.execute-api.us-east-1.amazonaws.com/dev/lookup?q=Rochelle%20Salt">/lookup?q=Rochelle Salt</a></td>
+                            <td>500 ms</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <!--//code-block-->
+                </div>
+                <div id="details" class="section-block">
+                  <h3>Details about the /lookup endpoint:</h3>
+                  <div class="code-block">
+                    <p>This endpoint searches for and returns properties for the chemical that most closely matches your query in our dataset. Think of it like an "I'm feeling lucky" search for chemicals.</p>
+                    <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th>key</th>
+                            <th>description of the key</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">boiling_point_C</th>
+                            <td>boiling point returned as a float with units of degrees Celcius</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">melting_point_C</th>
+                            <td>melting point returned as a float with units of degrees Celcius</td>
+                          </tr>
+						  <tr>
+                            <th scope="row">density_gcm-1</th>
+                            <td>density returned as a float with units of g/mL</td>
+                          </tr>
+						  <tr>
+                            <th scope="row">density_is_estimated</th>
+                            <td>returns true if the density is not determined experimentally (otherwise does not appear)</td>
+                          </tr>
+						  <tr>
+                            <th scope="row">mw</th>
+                            <td>molecular weight returned as a float with units of g/mol</td>
+                          </tr>
+						  <tr>
+                            <th scope="row">prod_name</th>
+                            <td>the chemical name returned as a string</td>
+                          </tr>
+						  <tr>
+                            <th scope="row">mol_formula</th>
+                            <td>the molecular formula returned as a string</td>
+                          </tr>
+						  <tr>
+                            <th scope="row">physical_description</th>
+                            <td>the physical description (apppearance) at STP</td>
+                          </tr>
+						  <tr>
+                            <th scope="row">color</th>
+                            <td>the color at STP</td>
+                          </tr>
+						  <tr>
+                            <th scope="row">hazards</th>
+                            <td>hazards returned as a list of strings</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+					
+					
+                  </div>
+                  <!--//code-block-->
+                </div>
+              </section>
+              <section id="usage-section" class="doc-section">
+                <h2 class="section-title">Usage Limits</h2>
+                <div class="section-block">
+                  <p>Feel free to use this service without an API key for up to 10,000 requests 
+				  per day. However, if use exceeds 10,000 requests per day, 
+				  keyless requests may be rate-limited without notice. 
+				  If you plan on using more than 
+				  10,000 requests per day, you can get an API 
+				  key and use get more stable access to our API. <b>API keys are free for 
+				  noncommercial use.</b> For API key access, <a href="mailto:chemapi@mail.com">send us an email</a> and tell us about your application and include a traffic estimate.
+				  <br><br> 
+				  If you use our free API, please give us a shoutout. Thank you!!!</p>
+                </div>
+              </section>
+              <section id="future-section" class="doc-section">
+                <h2 class="section-title">Future Work</h2>
+                <div class="section-block">
+                  <p>We're attempting to build some new client libraries and add this to the major API marketplaces so that more people can get easy access to this API.<br><br>
+				  Also, we're looking into creating a few new endpoints like /search, /suggest, and (what we're most excited about) /predict, 
+				  which will be powered by machine learning. Check back every so often for progress reports!</p>
+                </div>
+              </section>
+              <!--//doc-section-->
+              <section id="clientlib-section" class="doc-section">
+                <h2 class="section-title">Client Libraries</h2>
+                <div class="section-block">
+                  <p>If you'd like to help out this free endeavor, you can by writing client libraries!<br><br>If you've written an open-source client library, we'd love to help publicize it here! Please <a href="mailto:chemapi@mail.com">send us an email</a>!</p>
+                </div>
+              </section>
+              <section id="thankyou-section" class="doc-section">
+                <h2 class="section-title">Thank you to:</h2>
+                <div class="section-block">
+                  <p><a href="https://themes.3rdwavemedia.com/">Xiaoying Riley</a> for building this awesome bootstrap template.<br></p>
+                </div>
+              </section>
+            </div>
+            <!--//content-inner-->
+          </div>
+          <!--//doc-content-->
+          <div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
+            <div id="doc-nav" class="doc-nav">
+              <nav id="doc-menu" class="nav doc-menu flex-column sticky">
+                <a class="nav-link scrollto" href="#whatdoesitdo-section">What does ChemAPI do?</a>
+                <a class="nav-link scrollto" href="#uses-section">Uses</a><a class="nav-link scrollto" href="#pricing-section">Pricing (Free!)</a>
+                <!--//nav-->
+                <a class="scrollto" href="#code-section">Docs</a>
+                <nav class="doc-sub-menu nav flex-column">
+                  <a class="nav-link scrollto" href="#howto">How to use</a>
+                  <a class="nav-link scrollto" href="#resptime">Increasing Response Time</a>
+                  <a class="nav-link scrollto" href="#details">More details about the /lookup endpoint</a>
+                </nav>
+                <!--//nav-->
+                <a class="nav-link scrollto" href="#usage-section">Usage Limits</a>
+                <a class="nav-link scrollto" href="#future-section">Future Work</a>
+                <a class="nav-link scrollto" href="#clientlib-section">Client Libraries</a><a class="nav-link scrollto" href="#thankyou-section">Thank Yous</a>
+              </nav>
+              <!--//doc-menu-->
+            </div>
+          </div>
+          <!--//doc-sidebar-->
+        </div>
+        <!--//doc-body-->
+      </div>
+      <!--//container-->
+    </div>
+    <!--//doc-wrapper-->
+    <!--//promo-block-->
+  </div>
+  <!--//page-wrapper-->
+  <footer id="footer" class="footer text-center">
+    <div class="container"></div>
+    <!--//container-->
+  </footer>
+  <!--//footer-->
+  <!-- Main Javascript -->
+  <script type="text/javascript" src="assets/plugins/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="assets/plugins/prism/prism.js"></script>
+  <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>
+  <script type="text/javascript" src="assets/plugins/stickyfill/dist/stickyfill.min.js"></script>
+  <script type="text/javascript" src="assets/js/main.js"></script>
+</body>
+
+</html>
